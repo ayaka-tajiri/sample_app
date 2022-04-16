@@ -4,10 +4,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        UID: ${UID}
+        GID: ${GID}
     # bindするアドレスとポート指定しないといけない
     command: bash -c "bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
       - "3011:3000"
     tty: true
+    user: ${UID}:${GID}
     volumes:
       - .:/app
