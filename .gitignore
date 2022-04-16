@@ -41,6 +41,7 @@ yarn-debug.log*
 .yarn-integrity
 .env
 .bash_history
+.irb_history
 
 /.idea
 sample_app.iml
