@@ -22,4 +22,3 @@ RUN gem install rails -v 6.0.4 && gem install bundler -v 2.2.17
 RUN bundle _2.2.17_ config set --local without 'production' && bundle _2.2.17_ install
 
 RUN yarn install
-
