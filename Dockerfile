@@ -16,10 +16,10 @@ USER ${UID}:${GID}
 
 WORKDIR /app
 
-COPY --chown=rails_app:rails_app ./Gemfile /app/Gemfile
-COPY --chown=rails_app:rails_app ./Gemfile.lock /app/Gemfile.lock
+COPY --chown=rails_app:rails_app . /app/
 
 RUN gem install rails -v 6.0.4 && gem install bundler -v 2.2.17
 RUN bundle _2.2.17_ config set --local without 'production' && bundle _2.2.17_ install
 
-COPY --chown=rails_app:rails_app . /app/
+RUN yarn install
+
