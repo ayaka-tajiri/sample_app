@@ -45,3 +45,4 @@ yarn-debug.log*
 
 /.idea
 sample_app.iml
+.cache
