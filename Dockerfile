@@ -3,7 +3,7 @@ FROM ruby:2.7.5
 ARG UID=1000
 ARG GID=1000
 
-RUN apt-get update -y && apt-get install -y sudo
+RUN apt-get update -y && apt-get install -y sudo imagemagick
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
