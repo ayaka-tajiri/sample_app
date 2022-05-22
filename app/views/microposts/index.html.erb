@@ -1,0 +1,17 @@
+<% provide(:title, 'Microposts') %>
+<h1>Microposts</h1>
+
+<%= form_with(model: @micropost, local: true, method: :get) do |f| %>
+  <div class="search">
+    <div class="search_filed"><%= f.text_field :q, placeholder: "search microposts" %></div>
+    <div class="search_button "><%= f.submit "Search", class: "btn btn-primary" %></div>
+  </div>
+<% end %>
+
+<%= will_paginate %>
+
+<ul class="microposts">
+  <%= render @microposts %>
+</ul>
+
+<%= will_paginate %>
