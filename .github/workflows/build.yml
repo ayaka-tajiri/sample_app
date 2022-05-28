@@ -17,6 +17,14 @@ jobs:
           bundler-cache: true
           bundler: 2.2.17
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '12.22.5'
+          cache: 'yarn'
+
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+
       - name: Migrate database
         run: bundle exec rails db:migrate
 
